@@ -1,10 +1,8 @@
 #include "PhoneticFinder.hpp"
 
-using namespace std; 
-
 namespace phonetic {
-	string find(string text, string word) {
-		cout << "hi" << endl; 
+	std::string find(const std::string text,const std::string word) {
+		std::cout << "hi" << std::endl; 
 		return "";
 	}
 }
