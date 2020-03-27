@@ -39,7 +39,12 @@ namespace phonetic {
 		throw std::runtime_error("Did not find the word " + word + " in the text");
 	}
 
+	// This boolean function helps us check if two letters are similar 
+	// (according to the assigment instructions).
+	// it returns true if they are similar, false else 
+
 	bool letterCheck(char l1, char l2){
+
 		if(l1 == 'v' || l1 == 'V' || l1 == 'w' || l1 == 'W') {
 			if(l2 == 'v' || l2 == 'V' || l2 == 'w' || l2 == 'W')
 				return true;
@@ -90,6 +95,7 @@ namespace phonetic {
 		}
 		else if((char)tolower(l1) == (char)tolower(l2)) 
 			return true;
+
 		else
 			return false;
 	}	
