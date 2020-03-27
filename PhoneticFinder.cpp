@@ -35,7 +35,6 @@ namespace phonetic {
 						flag = false;
 				}
 			}				  
-			
 		}
 		throw std::runtime_error("Did not find the word " + word + " in the text");
 	}

@@ -39,8 +39,8 @@ TEST_CASE("Test replacement of lower-case and upper-case") {
 
 TEST_CASE("Test v replaced by w case") {
     string text = "Corona wirus please go from here FOREWER";
-    CHECK(find(text, "virus") == string("wiros")); 
-    CHECK(find(text, "VIRUS") == string("wiros")); 
+    CHECK(find(text, "virus") == string("wirus")); 
+    CHECK(find(text, "VIRUS") == string("wirus")); 
     CHECK(find(text, "forever") == string("FOREWER")); 
     CHECK(find(text, "forewer") == string("FOREWER")); 
 }
