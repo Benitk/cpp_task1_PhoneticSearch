@@ -2,15 +2,23 @@
 
 namespace phonetic {
 
+	// Finds a word in text, even if the word is written with misspellings,
+	// The function returns the word as it is written in the text.
+	// An exception will be thrown - if there is wrong input (empty text/word) or if the word isn't 
+	// in the text.
+	
 	std::string find(const std::string text,const std::string word) {
 
-		std::string ans = "";
-		bool flag = true;
-		size_t pos = 0; //position of word 
+		if(text.length() == 0 || word.length() == 0)
+			throw std::runtime_error("invalid input");
 
+		std::string ans = "";
+		bool flag = true;  //flag that represents if the word is matching so far
+		size_t pos = 0;  //position of word 
+	    
 		for(size_t i = 0; i < text.length(); i++) {
 			
-			// new word found
+			// if new word found
 			if(!flag && (text.at(i-1) == ' ' || text.at(i-1) == '\n'))
 				flag = true;
 
@@ -25,6 +33,8 @@ namespace phonetic {
 					flag = false;
 				}
 			
+				// if found matching word and the text ends or the next char is ' ' or '\n'  
+				// return ans else continue searching
 				if(pos == word.length() && ((i+1 < text.length() 
 										  && (text.at(i+1) == ' ' || text.at(i+1) == '\n'))
 										  || i+1 == text.length()))
