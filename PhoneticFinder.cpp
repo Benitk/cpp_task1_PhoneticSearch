@@ -9,7 +9,7 @@ namespace phonetic {
 	
 	std::string find(const std::string text,const std::string word) {
 
-		if(text.length() == 0 || word.length() == 0)
+		if(text.length() == 0 || word.length() == 0 || word == " ")
 			throw std::runtime_error("invalid input");
 
 		std::string ans = "";
